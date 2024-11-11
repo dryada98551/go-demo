@@ -1,0 +1,40 @@
+{
+  "PROJECT": {
+    "NAME": "blockaction"
+  },
+  "JWT": {
+    "GRPCHOST": "192.168.1.102",
+    "GRPCPORT": "3103",
+    "JWTREDISKEY": "UserLogin"
+  },
+  "GIN": {
+    "HOST": "0.0.0.0",
+    "PORT": "8080",
+    "DOMAIN": "baf.alpha.blockaction.tech",
+    "BASEPATH": "/BASEPATH"
+  },
+  "DB": {
+    "USER": "babdev",
+    "PASSWORD": "YmFiZGV2MXFhekBXU1g=",
+    "DBNAME": "blockaction",
+    "HOST": "192.168.1.102",
+    "PORT": "5432"
+  },
+  "REDIS": {
+    "PASSWORD": "",
+    "DB": 0,
+    "HOST": "192.168.1.103",
+    "PORT": "6379"
+  },
+  "HealthUrl": [
+    "http://127.0.0.1:8080/_liveness",
+    "http://bab-04-game-player-station:8080/_liveness"
+  ],
+  "APIServices": {
+    "GamePlayerStation": {
+      "Domain": "http://bab-04-game-player-station:8080",
+      "Withdraw": "/game-player-station/api/v1/withdraw",
+      "Deposit": "/game-player-station/api/v1/deposit"
+    }
+  }
+}

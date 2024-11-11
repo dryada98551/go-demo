@@ -1,0 +1,46 @@
+definitions:
+  apiv1.Request01:
+    properties:
+      UserID:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api/v1/game/galaxyagroup/start:
+    post:
+      consumes:
+      - application/json
+      description: do user game login
+      parameters:
+      - description: connection_token
+        in: formData
+        name: connection_token
+        required: true
+        type: string
+      - description: 自定义头信息1
+        in: header
+        name: X-Custom-Header1
+        required: true
+        type: string
+      - description: 用戶信息
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/apiv1.Request01'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+      summary: game galaxyagroup login
+      tags:
+      - V1
+swagger: "2.0"

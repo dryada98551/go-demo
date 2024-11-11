@@ -1,0 +1,72 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/api/v1/game/galaxyagroup/start": {
+            "post": {
+                "description": "do user game login",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "V1"
+                ],
+                "summary": "game galaxyagroup login",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "connection_token",
+                        "name": "connection_token",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "自定义头信息1",
+                        "name": "X-Custom-Header1",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "用戶信息",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/apiv1.Request01"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "apiv1.Request01": {
+            "type": "object",
+            "properties": {
+                "UserID": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
