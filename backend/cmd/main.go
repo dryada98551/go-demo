@@ -6,7 +6,7 @@ import (
 	// "main/internal/service"
 	// "math/big"
 	// "time"
-	
+	configs "main/internal/shared/utils/init"
 	route01 "main/internal/01-wallet/routes"
 )
 
@@ -20,6 +20,12 @@ func main() {
 	{
 		route01.RegisterRoutesV1(v1)
 	}
+
+	
+	// v2 := configs.Global.GinSet.Engine.Group("/api/v2")
+	// {
+	// 	route01.RegisterRoutesV1(v2)
+	// }
 
 	configs.Global.GinSet.Engine.Run(":" + configs.Global.EnvVar.GIN.Port) // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }

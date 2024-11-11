@@ -11,8 +11,8 @@ import (
 
 	log "main/internal/shared/utils/log"
 
-	"main/internal/shared/middleware"
 	"main/internal/models"
+	"main/internal/shared/middleware"
 )
 
 type InitParmsConfig struct {
@@ -85,7 +85,6 @@ func (param InitParmsConfig) SqliteSetting() InitParmsConfig {
 	if err != nil {
 		log.ERROR("無法打開 SQLite 資料庫:" + err.Error())
 	}
-	
 
 	// 自動遷移用戶表結構
 	db.AutoMigrate(&models.UserWallet{})
