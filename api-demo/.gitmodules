@@ -1,3 +1,0 @@
-[submodule "internal/lib"]
-	path = internal/lib
-	url = https://gitlab.alpha.blockaction.tech/bab/lib.git
